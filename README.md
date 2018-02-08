@@ -25,7 +25,9 @@ Enjoy hooking wechat,by Xposed,Root,Accessibility,and so on...
 4，跳一跳，小游戏原来可以这样操作，满分！
 
 5，Wechat Hook，持续关注，技术限制了我们更多的想象。。。
+
 ![wenchat-tiaotiao](https://github.com/duqian291902259/WechatHook-Dusan/blob/master/screenshot/wenchat-tiaotiao.png)
+
 
 ## Tips
 hook 某个app，都是针对某个版本进行的，因为需要反编译apk，分析源码查找hook点，才能改变原有app的执行逻辑或者改变输入输出值，本项目开发比较早，支持的微信版本为：6.3.32 和6.5.7，可以自行下载。
@@ -34,7 +36,8 @@ hook 某个app，都是针对某个版本进行的，因为需要反编译apk，
 
 ## Future
 
-本项目也是学习和借鉴了很多前辈的各个实践经验，只有尝试了才能领悟其中的乐趣。越早期的微信，apk越小，代码量越小，相对容易hook。
+本项目也是学习和借鉴了很多前辈的各个实践经验，感谢前辈。
+只有尝试了才能领悟其中的乐趣。越早期的微信，apk越小，代码量越小，相对容易hook。
 
 欢迎交流：
 duqian2010@gmail.com ,杜小菜，微信：dusan2010
