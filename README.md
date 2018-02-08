@@ -12,7 +12,7 @@ Enjoy hooking wechat,by Xposed,Root,Accessibility,and so on...
 
 ## Features
 
-![wechat-hook-home](https://github.com/duqian291902259/WechatHook-Dusan/blob/master/screenshot/wechat-hook-home.png)
+![wechat-hook-dusan](https://github.com/duqian291902259/WechatHook-Dusan/blob/master/screenshot/wechat-hook-dusan.png)
 
 1，本项目应用了xposed框架，实现微信hook，可以自动智能回复聊天信息，实现聊天机器人的功能，还可以刷跳一跳分数。所以需要root权限。
 
