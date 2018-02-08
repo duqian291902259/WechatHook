@@ -1,4 +1,4 @@
-package site.duqian.wchook.android;
+package site.duqian.wchook;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -17,9 +17,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import site.duqian.wchook.R;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.OnCheckedChanged;
+import butterknife.OnClick;
 import site.duqian.wchook.accessibility.AccessibilityHelper;
 import site.duqian.wchook.accessibility.WechatService;
+import site.duqian.wchook.android.MapActivity;
+import site.duqian.wchook.android.TestFun;
+import site.duqian.wchook.android.WxJumpActivity;
 import site.duqian.wchook.base.BaseActivity;
 import site.duqian.wchook.database.FriendsDbUtils;
 import site.duqian.wchook.model.Config;
@@ -32,12 +39,6 @@ import site.duqian.wchook.utils.UIUtil;
 import site.duqian.wchook.wechat.WeChatHelper;
 import site.duqian.wchook.wechat.WechatUI;
 import site.duqian.wchook.xposed.SettingsHelper;
-
-import java.util.List;
-
-import butterknife.BindView;
-import butterknife.OnCheckedChanged;
-import butterknife.OnClick;
 
 import static site.duqian.wchook.accessibility.NearbyAs.sendMessageContent;
 import static site.duqian.wchook.model.Constant.MAP_DEFAULT_LATITUDE;

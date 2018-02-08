@@ -43,6 +43,8 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.CameraPosition;
+
+import site.duqian.wchook.MainActivity;
 import site.duqian.wchook.R;
 import site.duqian.wchook.common.ApiUtil;
 import site.duqian.wchook.model.NonoCallBack;
