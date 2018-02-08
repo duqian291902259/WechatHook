@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+Properties props = new Properties();
+props.load(new FileInputStream(file("../local.properties")));
+
+android {
+    signingConfigs {
+        release {
+            keyAlias props['KEY_ALIAS']
+            keyPassword props['KEY_PASSWORD']
+            storeFile file(props['KEYSTORE_FILE'])
+            storePassword props['KEYSTORE_PASSWORD']
+        }
+    }
+
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        applicationId "site.duqian.wchook"
+        minSdkVersion 19
+        targetSdkVersion 22
+        versionCode 7
+        versionName "1.151"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:26+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    compile 'com.crystal:crystalrangeseekbar:1.1.1'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //xposed
+    provided 'de.robv.android.xposed:api:82:sources'
+    provided 'de.robv.android.xposed:api:82'
+    //googlemap
+    compile 'com.google.android.gms:play-services-maps:11.8.0'
+    //高德地图
+    compile 'com.amap.api:search:5.0.0'
+    compile 'com.amap.api:map3d-native:5.0.0'
+    compile 'com.amap.api:map3d:5.0.0'
+    compile 'com.amap.api:location:3.4.0'
+    compile 'com.google.code.gson:gson:2.8.2'
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
+    //悬浮窗
+    implementation 'com.github.yhaolpz:FloatWindow:1.0.8'
+
+}

@@ -1,3 +1,21 @@
+*.iml
+.gradle
+local.properties
+.idea/
+.idea/workspace.xml
+.idea/libraries
+.DS_Store
+build/
+captures/
+.externalNativeBuild
+misc.xml
+.DS_Store
+bin/
+gen/
+out/
+node_modules/
+dist/
+
 # Built application files
 *.apk
 *.ap_

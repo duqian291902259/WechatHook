@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MergeRootFrame">
+
+    <LinearLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity= "top|right">
+        <Button
+            android:id="@+id/btn_change_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To Google地图"/>
+        <ToggleButton
+            android:id="@+id/btn_auto_change"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textOn="自动切换开启"
+            android:textOff="自动切换关闭"
+            android:visibility="gone"
+            android:checked="true"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity= "bottom|left">
+
+        <TextView
+            android:id="@+id/tv_position"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="position"
+            android:layout_marginRight="60dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorAccent"/>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_position"
+            android:layout_centerHorizontal="true"
+            android:text="确定所选"/>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_test_root"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:text="跳一跳需ROOT权限，测试权限"
+                android:textColor="#ff0000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="使用方法: 先获取root,打开悬浮窗,然后打开跳一跳开始游戏;点击悬浮窗logo，显示浮层，手指从棋子滑到想要跳到的地方即可。
+\n 如果不准确，调整文本框中的值，比如720*1280基数为2"
+                android:textColor="#000000"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:gravity="left"
+                />
+
+            <EditText
+                android:id="@+id/et_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="2.0"
+                android:hint="720*1280基数为2,自己调整对应分辨率合适的值"
+                android:textColor="#000000"
+                android:inputType="numberDecimal"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/test"/>
+
+            <Button
+                android:id="@+id/showFloat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:text="打开悬浮窗"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

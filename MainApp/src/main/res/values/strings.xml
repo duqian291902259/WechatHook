@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">WechatHook</string>
+    <string name="service_name">NonoHook</string>
+    <string name="as_description">微信辅助for nonolive</string>
+    <string name="as_not_open">服务未开启，请点击：开启辅助功能！</string>
+    <string name="text_send_greeting">Halo.</string>
+    <string name="text_send_greeting_en">Hi，I want to make friends with you.</string>
+    <string name="feature_list">主要功能：\n(1) 修改微信当前定位位置。
+        \n(2) 自动向微信附近的人打招呼。\n(3) 自动回复好友消息（随机延时）。</string>
+</resources>

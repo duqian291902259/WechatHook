@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ccc"
+            android:scrollbars="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ccc"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingLeft="10dp">
+
+        <LinearLayout
+            android:id="@+id/ll_time_wrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="单次处理时间(秒)："/>
+
+            <EditText
+                android:id="@+id/et_config_time"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:maxLength="15"
+                android:singleLine="true"
+                android:text="1000"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_longtitude_wrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_below="@+id/ll_time_wrap"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="经度："/>
+
+            <EditText
+                android:id="@+id/et_longitude"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:inputType="numberSigned|numberDecimal"
+                android:maxLength="15"
+                android:singleLine="true"
+                android:text="23.10485"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_latitude_wrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_longtitude_wrap"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="纬度："/>
+
+            <EditText
+                android:id="@+id/et_latitude"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:inputType="numberSigned|numberDecimal"
+                android:maxLength="15"
+                android:singleLine="true"
+                android:text="113.36802380"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_say_hello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_latitude_wrap"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:text="自定义打招呼内容:"/>
+            <EditText
+                android:id="@+id/et_send_greeting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/text_send_greeting"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_position_wrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_say_hello"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="保存"/>
+
+            <Button
+                android:id="@+id/btn_get_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="地图配置"/>
+
+            <Button
+                android:id="@+id/btn_clear_config"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:text="清除记录"/>
+
+            <Button
+                android:id="@+id/btn_wx_jump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:text="跳一跳"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_wechat_wrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_position_wrap"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_open_wechat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="打开微信"/>
+
+            <Button
+                android:id="@+id/btn_open_as"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开启辅助功能"/>
+
+            <Button
+                android:id="@+id/btn_mock_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自动打招呼"/>
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkbox_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开启自动回复"
+            android:layout_below="@id/ll_wechat_wrap"
+            />
+        <LinearLayout
+            android:id="@+id/ll_open_reply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkbox_reply"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <RadioGroup
+                android:id="@+id/rg_reply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_reply_xposed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开启XP自动回复"
+                    />
+
+                <RadioButton
+                    android:id="@+id/rb_reply_as"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开启辅助回复"
+                    />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_below="@+id/ll_open_reply"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/feature_list"/>
+        <!--向微信附近的人打招呼\n1\n2\n3\n4\n5\n6\n7\n8\n9\n-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/tv_result"
+            android:layout_centerHorizontal="true"
+            android:text="scroll to the end"/>
+    </RelativeLayout>
+
+</ScrollView>
+
