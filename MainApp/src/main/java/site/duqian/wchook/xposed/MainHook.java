@@ -34,7 +34,7 @@ public class MainHook implements IXposedHookLoadPackage {
             mContext = commonHook.getContext();
             //获取wechat版本
             CommonHook.initWechatVersion(mContext);
-            commonHook.showToast(mContext,"duqian wechat "+CommonHook.wechatVersionName);
+            commonHook.showToast(mContext,"duqian wechat hooked "+CommonHook.wechatVersionName);
         }
 
         CommonHook.hookTextView();

@@ -107,7 +107,7 @@ public class CommonHook {
                     abc = (String) object;
                     if (!TextUtils.isEmpty(abc)) {
                         abc = ReplaceText(new String[]{"通讯录","Contacts","游戏", "扫一扫"},
-                                new String[]{"杜乾","杜乾","杜乾", "DuQian"}, 4, abc);
+                                new String[]{"杜乾","杜乾","被Android Developer 杜乾Hook了", "duqian2010@gmail.com"}, 4, abc);
                         methodHookParam.args[0] = abc;
                     }
                 }

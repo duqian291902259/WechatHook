@@ -37,10 +37,12 @@ Enjoy hooking wechat,by Xposed,Root,Accessibility,and so on...
 ## Tips
 hook 某个app，都是针对某个版本进行的，因为需要反编译apk，分析源码查找hook点，才能改变原有app的执行逻辑或者改变输入输出值，本项目开发比较早，支持的微信版本为：6.3.32 和6.5.7,新版微信没有跟进，如果你要实践可以自行探索，相信你可以从代码中找到灵感。
 
-测试：
+打开下列链接，下载apk测试：
 1，安装release app，用下面链接提供的打包好了的app。
 2，已经root过的手机一台，要安装好xposed框架，并加载本项目的WechatHook模块到xposed，重启生效。
 3，安装：weixin6.3.32.apk。
+4，如果微信底部tab，“通讯录”改成了“杜乾”，发现里面的“扫一扫”变成了“duqian2010@gmail.com"表示hook微信成功了。
+
 [https://github.com/duqian291902259/WechatHook-Dusan/tree/master/hook_release](https://github.com/duqian291902259/WechatHook-Dusan/tree/master/hook_release)
 
 ## Future
