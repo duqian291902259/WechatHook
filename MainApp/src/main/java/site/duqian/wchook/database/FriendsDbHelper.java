@@ -13,7 +13,7 @@ import static site.duqian.wchook.database.FriendDbContract.SQL_DELETE_ENTRIES;
 public class FriendsDbHelper extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "NonoHook.db";
+    public static final String DATABASE_NAME = "WechatHook.db";
 
 
 
@@ -26,12 +26,14 @@ public class FriendsDbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(FriendDbContract.SQL_CREATE_ENTRIES);
     }
 
+    @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // This database is only a cache for online data, so its upgrade policy is
         // to simply to discard the data and start over
         db.execSQL(SQL_DELETE_ENTRIES);
         onCreate(db);
     }
+    @Override
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onUpgrade(db, oldVersion, newVersion);
     }

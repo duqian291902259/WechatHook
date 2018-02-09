@@ -47,7 +47,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import site.duqian.wchook.MainActivity;
 import site.duqian.wchook.R;
 import site.duqian.wchook.common.ApiUtil;
-import site.duqian.wchook.model.NonoCallBack;
+import site.duqian.wchook.model.MyCallBack;
 import site.duqian.wchook.utils.LogUtils;
 import site.duqian.wchook.utils.ToastUtil;
 import site.duqian.wchook.xposed.SettingsHelper;
@@ -428,7 +428,7 @@ public class MapActivity extends FragmentActivity implements View.OnClickListene
     }
 
     private void getGooglePosition(com.google.android.gms.maps.model.LatLng latLng) {
-        ApiUtil.init().getGooglePostion(latLng, new NonoCallBack() {
+        ApiUtil.init().getGooglePostion(latLng, new MyCallBack() {
             public void onSuccess(String result) {
                 formatAddress = result;
                 LogUtils.debug(TAG,"Google formatAddress ="+formatAddress);

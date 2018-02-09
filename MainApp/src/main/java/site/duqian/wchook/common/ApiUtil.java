@@ -5,7 +5,7 @@ import android.os.Looper;
 
 import site.duqian.wchook.model.Constant;
 import site.duqian.wchook.model.GoogleAddress;
-import site.duqian.wchook.model.NonoCallBack;
+import site.duqian.wchook.model.MyCallBack;
 import site.duqian.wchook.utils.JsonUtil;
 import site.duqian.wchook.utils.LogUtils;
 import site.duqian.wchook.utils.ThreadManager;
@@ -61,7 +61,7 @@ public class ApiUtil {
         return result;
     }
 
-    public void askRobot(String field_content, NonoCallBack nonoCallBack) {
+    public void askRobot(String field_content, MyCallBack myCallBack) {
         ThreadManager.getBackgroundPool().execute(new Runnable() {
             @Override
             public void run() {
@@ -71,12 +71,12 @@ public class ApiUtil {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            nonoCallBack.onSuccess(reply);
+                            myCallBack.onSuccess(reply);
                         }
                     });
                 } catch (Exception e) {
                     e.printStackTrace();
-                    nonoCallBack.onFailure(e);
+                    myCallBack.onFailure(e);
                 }
             }
         });
@@ -87,11 +87,11 @@ public class ApiUtil {
      * 任务
      */
     private class NonoTask implements Runnable {
-        private NonoCallBack nonoCallBack;
+        private MyCallBack myCallBack;
         private int taskType;
 
-        public NonoTask(int taskType, NonoCallBack nonoCallBack) {
-            this.nonoCallBack = nonoCallBack;
+        public NonoTask(int taskType, MyCallBack myCallBack) {
+            this.myCallBack = myCallBack;
         }
 
         @Override
@@ -126,7 +126,7 @@ public class ApiUtil {
         return formatted_address;
     }
 
-    public void getGooglePostion(com.google.android.gms.maps.model.LatLng latLng, NonoCallBack nonoCallBack) {
+    public void getGooglePostion(com.google.android.gms.maps.model.LatLng latLng, MyCallBack myCallBack) {
         ThreadManager.getBackgroundPool().execute(new Runnable() {
             @Override
             public void run() {
@@ -136,12 +136,12 @@ public class ApiUtil {
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            nonoCallBack.onSuccess(googlePostion);
+                            myCallBack.onSuccess(googlePostion);
                         }
                     });
                 } catch (Exception e) {
                     e.printStackTrace();
-                    nonoCallBack.onFailure(e);
+                    myCallBack.onFailure(e);
                 }
             }
         });

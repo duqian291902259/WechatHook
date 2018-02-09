@@ -1,6 +1,8 @@
 # WechatHook-Dusan
 Enjoy hooking wechat,by Xposed,Root,Accessibility,and so on...
 
+![wauto-wechat-dusan](https://github.com/duqian291902259/WechatHook-Dusan/blob/master/screenshot/wauto-wechat-dusan.png)
+
 ## About 
 
 这是一个有趣的项目，探索android流行的黑科技，一起研究和开发各种辅助神器吧。持续更新。。。
@@ -13,6 +15,7 @@ Enjoy hooking wechat,by Xposed,Root,Accessibility,and so on...
 ## Features
 
 ![wechat-hook-dusan](https://github.com/duqian291902259/WechatHook-Dusan/blob/master/screenshot/wechat-hook-dusan.png)
+
 
 1，本项目应用了xposed框架，实现微信hook，可以自动智能回复聊天信息，实现聊天机器人的功能，还可以刷跳一跳分数。所以需要root权限。
 

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import site.duqian.wchook.common.ApiUtil;
-import site.duqian.wchook.model.NonoCallBack;
+import site.duqian.wchook.model.MyCallBack;
 import site.duqian.wchook.utils.AdbUtil;
 import site.duqian.wchook.utils.CommandResult;
 import site.duqian.wchook.utils.LogUtils;
@@ -42,7 +42,7 @@ public class TestFun {
     }
 
     public void testRequest() {
-        ApiUtil.init().askRobot("你好", new NonoCallBack() {
+        ApiUtil.init().askRobot("你好", new MyCallBack() {
             @Override
             public void onSuccess(String result) {
                 if (!TextUtils.isEmpty(result)) {

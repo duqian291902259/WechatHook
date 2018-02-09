@@ -9,13 +9,12 @@ import android.text.TextUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import site.duqian.wchook.utils.LogUtils;
-
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedBridge;
+import site.duqian.wchook.utils.LogUtils;
 
 import static de.robv.android.xposed.XposedHelpers.callMethod;
 import static de.robv.android.xposed.XposedHelpers.callStaticMethod;
@@ -108,7 +107,7 @@ public class CommonHook {
                     abc = (String) object;
                     if (!TextUtils.isEmpty(abc)) {
                         abc = ReplaceText(new String[]{"通讯录","Contacts","游戏", "扫一扫"},
-                                new String[]{"Nonolive","Nonolive","Nonolive", "DuQian"}, 4, abc);
+                                new String[]{"杜乾","杜乾","杜乾", "DuQian"}, 4, abc);
                         methodHookParam.args[0] = abc;
                     }
                 }
