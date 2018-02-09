@@ -6,16 +6,15 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import de.robv.android.xposed.XC_MethodHook;
 import site.duqian.wchook.base.BaseHook;
 import site.duqian.wchook.common.ApiUtil;
 import site.duqian.wchook.utils.LogUtils;
 import site.duqian.wchook.utils.ThreadManager;
 import site.duqian.wchook.wechat.WeChatHelper;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import de.robv.android.xposed.XC_MethodHook;
 
 import static de.robv.android.xposed.XposedHelpers.callMethod;
 import static de.robv.android.xposed.XposedHelpers.callStaticMethod;
@@ -49,7 +48,7 @@ public class HookMessage extends BaseHook {
 
     //hook聊天列表里面的消息
     public void hookConversationItem() {
-        LogUtils.debug(TAG,"nono  hookMessage");
+        LogUtils.debug(TAG,"duqian  hookMessage");
         findAndHookMethod(VersionParam.conversationClass, classLoader,
                 VersionParam.con_GetCursorMethod, Cursor.class,
                 new XC_MethodHook() {
@@ -79,7 +78,7 @@ public class HookMessage extends BaseHook {
                         if (autoReplyMsg) {
                             getReply(field_username,field_content);
                         }
-                        //LogUtils.debug(TAG,field_unReadCount+",autoReplyMsg="+autoReplyMsg);
+                        LogUtils.debug(TAG,field_unReadCount+",autoReplyMsg="+autoReplyMsg);
                     }
 
                     if (list_msg.size()>60){

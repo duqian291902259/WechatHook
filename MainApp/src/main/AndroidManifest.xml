@@ -52,7 +52,7 @@
             android:value="true"/>
         <meta-data
             android:name="xposeddescription"
-            android:value="nonolive-hook"/>
+            android:value="wechat-hook-dusan"/>
         <meta-data
             android:name="xposedminversion"
             android:value="54"/>

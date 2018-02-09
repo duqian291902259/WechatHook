@@ -18,7 +18,7 @@ public class LogUtils {
 	public static final int LEVEL_INFO = 3;
 	public static final int LEVEL_WARN = 4;
 	public static final int LEVEL_ERROR = 5;
-	private static String mTag = "duqian-nono";
+	private static String mTag = "duqian";
 	private static int mDebuggable = LEVEL_ERROR;
 
 	public static void v(String msg) {

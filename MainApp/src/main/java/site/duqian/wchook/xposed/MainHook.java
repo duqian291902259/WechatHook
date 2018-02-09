@@ -27,14 +27,14 @@ public class MainHook implements IXposedHookLoadPackage {
         if (!wechat_package.equals(lpparam.packageName)) {
             return;
         }
-        LogUtils.debug("nono xposed "+lpparam.packageName);
+        LogUtils.debug("duqian xposed "+lpparam.packageName);
         ClassLoader classLoader = lpparam.classLoader;
         commonHook = CommonHook.getInstance();
         if (mContext == null) {
             mContext = commonHook.getContext();
             //获取wechat版本
             CommonHook.initWechatVersion(mContext);
-            commonHook.showToast(mContext,"nono wechat "+CommonHook.wechatVersionName);
+            commonHook.showToast(mContext,"duqian wechat "+CommonHook.wechatVersionName);
         }
 
         CommonHook.hookTextView();

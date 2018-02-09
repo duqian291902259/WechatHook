@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">WechatHook</string>
     <string name="service_name">WechatHook</string>
-    <string name="as_description">微信辅助for nonolive</string>
+    <string name="as_description">微信辅助助手 By Dusan</string>
     <string name="as_not_open">服务未开启，请点击：开启辅助功能！</string>
     <string name="text_send_greeting">Halo.</string>
     <string name="text_send_greeting_en">Hi，I want to make friends with you.</string>
