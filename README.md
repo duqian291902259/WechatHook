@@ -1,7 +1,7 @@
 # WechatHook-Dusan
 Enjoy hooking wechat,by Xposed,Root,Accessibility,and so on...
 
-![wauto-wechat-dusan](https://github.com/duqian291902259/WechatHook-Dusan/blob/master/screenshot/wauto-wechat-dusan.png)
+![wauto-wechat-dusan](https://github.com/duqian291902259/WechatHook-Dusan/blob/master/screenshot/auto-wechat-dusan.png)
 
 ## About 
 
