@@ -94,7 +94,7 @@ public class HookMessage extends BaseHook {
         ThreadManager.getBackgroundPool().execute(new Runnable() {
             @Override
             public void run() {
-                String replyContent = ApiUtil.init().askRobot(field_content);
+                String replyContent = ApiUtil.init().askTuringRobot(field_content);
                 if (!TextUtils.isEmpty(replyContent)) {
                     //延时回复
                     int delayTime = WeChatHelper.getRandom(5678,12345);

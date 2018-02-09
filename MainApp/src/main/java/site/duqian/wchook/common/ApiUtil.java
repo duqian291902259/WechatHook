@@ -53,6 +53,7 @@ public class ApiUtil {
             JSONObject json = new JSONObject();
             json.put("key", turing_app_key);
             json.put("info", field_content);
+            json.put("userid", "duqian");
             result = requester.post(turing_api, json.toString());
         } catch (Exception e) {
             e.printStackTrace();
@@ -100,13 +101,19 @@ public class ApiUtil {
         }
     }
 
+    /**
+     * 测试本地聊天服务器，弃用
+     * @param field_content
+     * @return
+     */
     public String askRobot(String field_content) {
-        //String url = "http://52.77.95.9:8299/get_response?user_input=" + field_content + "&nsukey=YNsGMm6t4t720UGrr%2FsyJTA9fBnm9yg2GOw00NdirnCUnSl1r3Pn7AKtFkSbCqXwl%2FuIB5UArRfUCEeUYchQiYbmerLDnejdHVft25dUeLY8PXuyRfxz2QSFJyBqfmkbHZeEecalGC%2FxEw84o6nfQiK15t%2BTwT6yLiqlEV25lRrxb2EnJkMETrcTv9YfsmkY";
-        String url ="http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=%E9%93%B6%E9%AD%82&bk_length=600";
+        String url = "http://52.77.95.9:8299/get_response?user_input=" + field_content + "&nsukey=YNsGMm6t4t720UGrr%2FsyJTA9fBnm9yg2GOw00NdirnCUnSl1r3Pn7AKtFkSbCqXwl%2FuIB5UArRfUCEeUYchQiYbmerLDnejdHVft25dUeLY8PXuyRfxz2QSFJyBqfmkbHZeEecalGC%2FxEw84o6nfQiK15t%2BTwT6yLiqlEV25lRrxb2EnJkMETrcTv9YfsmkY";
+        //String url ="http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=%E9%93%B6%E9%AD%82&bk_length=600";
         String reply = "";
         try {
             String result = requester.get(url);
             JSONObject object = new JSONObject(result);
+            LogUtils.debug(TAG, "askRobot result=" + result);
             reply = object.getString("response");//reply = object.optString("response");
         } catch (Exception e) {
             e.printStackTrace();
