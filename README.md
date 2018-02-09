@@ -1,16 +1,18 @@
 # WechatHook-Dusan
 Enjoy hooking wechat,by Xposed,Root,Accessibility,and so on...
+类似聊天机器人，自动抢红包，自动发朋友圈这样的功能，都可以开发，但是要花足够的时间研究微信源码（反编译后的都是高度混淆的代码，太痛苦了），从我的项目里面，你一定能获取灵感，一起研究吧。
 
-![wauto-wechat-dusan](https://github.com/duqian291902259/WechatHook-Dusan/blob/master/screenshot/auto-wechat-dusan.png)
+![auto-wechat-dusan.png](http://upload-images.jianshu.io/upload_images/2001922-59bb02f4ed2cfe65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ## About 
 
-这是一个有趣的项目，探索android流行的黑科技，一起研究和开发各种辅助神器吧。持续更新。。。
-感兴趣的话，请Star or Fork一下吧：
+这是一个有趣的项目，探索android流行的黑科技，一起研究和开发各种辅助神器吧。持续更新，感兴趣的话，请Star or Fork一下吧：
 
 [https://github.com/duqian291902259/WechatHook-Dusan](https://github.com/duqian291902259/WechatHook-Dusan)
 
 工具链：Mac，Android Studio，Root的手机，业余挖掘技术的魅力。
+上图源码还没有同步上来，目前可以参考我下面的说明和源码。
 
 ## Features
 
@@ -33,9 +35,13 @@ Enjoy hooking wechat,by Xposed,Root,Accessibility,and so on...
 
 
 ## Tips
-hook 某个app，都是针对某个版本进行的，因为需要反编译apk，分析源码查找hook点，才能改变原有app的执行逻辑或者改变输入输出值，本项目开发比较早，支持的微信版本为：6.3.32 和6.5.7，可以自行下载。
-新版微信没有跟进，如果你要实践可以自行探索，相信你可以从代码中找到灵感。
+hook 某个app，都是针对某个版本进行的，因为需要反编译apk，分析源码查找hook点，才能改变原有app的执行逻辑或者改变输入输出值，本项目开发比较早，支持的微信版本为：6.3.32 和6.5.7,新版微信没有跟进，如果你要实践可以自行探索，相信你可以从代码中找到灵感。
 
+测试：
+1，安装release app，用下面链接提供的打包好了的app。
+2，已经root过的手机一台，要安装好xposed框架，并加载本项目的WechatHook模块到xposed，重启生效。
+3，安装：weixin6.3.32.apk。
+[https://github.com/duqian291902259/WechatHook-Dusan/tree/master/hook_release](https://github.com/duqian291902259/WechatHook-Dusan/tree/master/hook_release)
 
 ## Future
 
