@@ -16,6 +16,7 @@ import site.duqian.wchook.utils.ThreadManager;
 import site.duqian.wchook.xposed.CommonHook;
 
 /**
+ * 图灵机器人
  * Created by duqian on 2017/5/11.
  */
 
@@ -46,19 +47,29 @@ public class ApiUtil {
         //requester = new HttpUtils();
     }
 
+    /**
+     * reply = {"code":100000,"text":"有什么疑问？"}
+     *
+     * @param field_content
+     * @return
+     */
     public String askTuringRobot(String field_content) {
-        String result = "";
+        String result = "I'm a Robot，call me Du Du，ha";
         try {
             //封装请求参数
             JSONObject json = new JSONObject();
             json.put("key", turing_app_key);
             json.put("info", field_content);
             json.put("userid", "duqian");
-            result = requester.post(turing_api, json.toString());
+            String response = requester.post(turing_api, json.toString());
+            JSONObject object = new JSONObject(response);
+            result = object.getString("text");
+            LogUtils.debug(TAG, "askRobot result=" + result);
         } catch (Exception e) {
             e.printStackTrace();
             LogUtils.debug(TAG, "error " + e);
         }
+
         return result;
     }
 
@@ -103,6 +114,7 @@ public class ApiUtil {
 
     /**
      * 测试本地聊天服务器，弃用
+     *
      * @param field_content
      * @return
      */
