@@ -3,6 +3,10 @@ package site.duqian.wchook.common;
 import android.os.Handler;
 import android.os.Looper;
 
+import org.json.JSONObject;
+
+import java.util.List;
+
 import site.duqian.wchook.model.Constant;
 import site.duqian.wchook.model.GoogleAddress;
 import site.duqian.wchook.model.MyCallBack;
@@ -10,10 +14,6 @@ import site.duqian.wchook.utils.JsonUtil;
 import site.duqian.wchook.utils.LogUtils;
 import site.duqian.wchook.utils.ThreadManager;
 import site.duqian.wchook.xposed.CommonHook;
-
-import org.json.JSONObject;
-
-import java.util.List;
 
 /**
  * Created by duqian on 2017/5/11.
@@ -101,8 +101,8 @@ public class ApiUtil {
     }
 
     public String askRobot(String field_content) {
-        String url = "http://52.77.95.9:8299/get_response?user_input=" + field_content + "&nsukey=YNsGMm6t4t720UGrr%2FsyJTA9fBnm9yg2GOw00NdirnCUnSl1r3Pn7AKtFkSbCqXwl%2FuIB5UArRfUCEeUYchQiYbmerLDnejdHVft25dUeLY8PXuyRfxz2QSFJyBqfmkbHZeEecalGC%2FxEw84o6nfQiK15t%2BTwT6yLiqlEV25lRrxb2EnJkMETrcTv9YfsmkY";
-        //String url ="http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=%E9%93%B6%E9%AD%82&bk_length=600";
+        //String url = "http://52.77.95.9:8299/get_response?user_input=" + field_content + "&nsukey=YNsGMm6t4t720UGrr%2FsyJTA9fBnm9yg2GOw00NdirnCUnSl1r3Pn7AKtFkSbCqXwl%2FuIB5UArRfUCEeUYchQiYbmerLDnejdHVft25dUeLY8PXuyRfxz2QSFJyBqfmkbHZeEecalGC%2FxEw84o6nfQiK15t%2BTwT6yLiqlEV25lRrxb2EnJkMETrcTv9YfsmkY";
+        String url ="http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=%E9%93%B6%E9%AD%82&bk_length=600";
         String reply = "";
         try {
             String result = requester.get(url);
