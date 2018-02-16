@@ -1,0 +1,98 @@
+<resources>
+    <string name="app_name">微信助手</string>
+    <string name="service_name">微信自动化助手</string>
+
+    <string name="page_title_xposed">微信自动化</string>
+
+    <string name="as_description">微信自动化操作，无需手动点击！推荐开启该功能！</string>
+    <string name="as_error">与当前微信版本不兼容！</string>
+    <string name="delay_message">设置延时回复微信消息</string>
+    <!--menu-->
+    <string name="as_open">微信辅助功能</string>
+    <string name="as_open_accessibility">开启辅助功能，自动操作微信</string>
+    <string name="as_not_open">请先开启辅助功能，点击右上角按钮进入！</string>
+    <string name="title_wechat">微信自动化</string>
+    <string name="title_notify">快速监听通知栏</string>
+    <string name="action_auto_function">Xposed主要功能</string>
+    <string name="action_open_wechat">打开微信</string>
+    <string name="action_enter_pyq">进入朋友圈</string>
+    <string name="action_send_msg">发信息</string>
+    <string name="action_send_pyq">发朋友圈</string>
+    <string name="action_message_deley">设置延时回复</string>
+    <string name="action_test">测试功能</string>
+
+    <string name="action_reply_msg">自动回复微信</string>
+    <string name="action_reply_tips">设置关键词，自定义回复内容</string>
+
+    <string name="action_filter_msg">过滤消息</string>
+    <string name="action_filter_description">不处理包含关键词的消息</string>
+    <string name="action_filter_hit">请输入关键字, 以分号，隔开</string>
+    <string name="action_filter_text">stop,停</string>
+
+    <string name="config_filter_tips">请设置关键词，对微信消息中包含关键词的信息不做处理</string>
+    <string name="config_filter_hint">停，不说了</string>
+
+    <string name="action_lucky_money">自动抢微信红包</string>
+    <string name="action_lucky_money_description">抢红包，随机延时，慎用！</string>
+    <string name="action_lucky_money_open">自动抢微信红包功能已经开启！</string>
+    <string name="action_lucky_money_close">自动抢微信红包功能已经关闭！</string>
+    <string name="action_lucky_money_show">自动抢微信红包功能，显示</string>
+    <string name="action_lucky_money_display">自动抢微信红包功能,隐藏</string>
+    <string name="action_robot_reply">Xposed智能回复</string>
+    <string name="action_robot_reply_description">智能回复好友信息，聊天机器人</string>
+    <string name="action_robot_reply_open">智能回复功能已开启！</string>
+    <string name="action_robot_reply_close">智能回复功能已关闭！</string>
+
+    <string name="action_accessibility_reply_open">辅助自动回复,已开启！</string>
+    <string name="action_accessibility_reply_close">辅助自动回复,已关闭！</string>
+
+    <string name="action_accessibility_reply">辅助自动回复</string>
+    <string name="action_accessibility_reply_description">智能回复通知栏聊天信息</string>
+
+    <!--监听消息-->
+    <string name="action_listener_title">监听消息</string>
+    <string name="action_listener_description">Toast显示监听到的微信消息</string>
+    <string name="key_wechat_message">KEY_WECHAT_MESSAGE</string>
+
+    <!--main menu-->
+    <string name="action_accessibility">开启辅助功能</string>
+    <string name="action_xposed">XP自动化</string>
+    <string name="action_about">关于我们</string>
+
+    <!--Key-->
+    <string name="key_xposed_function">KEY_ALL_FUNCTION</string>
+    <string name="key_accessibility_function">KEY_ALL_FUNCTION</string>
+    <string name="key_send_message">KEY_SEND_MESSAGE</string>
+    <string name="key_auto_reply">KEY_AUTO_REPLY</string>
+    <string name="key_lucky_money">KEY_LUCKY_MONEY</string>
+
+    <string name="key_wechat_enable">KEY_WECHAT_ENABLE</string>
+    <string name="key_open_wechat">KEY_OPEN_WECHAT</string>
+    <string name="key_enter_pyq">KEY_ENTER_PYQ</string>
+    <string name="key_send_pyq">KEY_SEND_PYQ</string>
+    <string name="key_robot_repley">KEY_ROBOT_REPLEY</string>
+    <string name="key_no_reply">KEY_NO_REPLEY</string>
+    <string name="key_message_deley">KEY_MESSAGE_DELEY</string>
+    <string name="key_test">KEY_TEST</string>
+    <string name="key_accessibility_reply">KEY_ACCESSIBILITY_REPLY</string>
+
+    <!--config-->
+    <string name="config_title_auto_reply">自动回复</string>
+    <string name="config_title_tips">请设置关键词，对微信消息中包含关键词的信息进行自动回复！回复内容中尽量不要包含关键词（两台手机同时使用该APP将反复发送）</string>
+    <string name="config_keyword_tips">请输入关键字(逗号隔开，不包含空格)：</string>
+    <string name="config_keyword_hint">新年，2017，祝</string>
+    <string name="config_reply_content_tips">请输入自动回复的内容：</string>
+    <string name="config_reply_hint">新年快乐！</string>
+    <string name="config_save">保存配置</string>
+    <string name="config_empty_keyword">关键词，不能为空或者包含空格！</string>
+    <string name="config_empty_content">回复内容，不能为空！</string>
+    <string name="config_saved">配置已保存！</string>
+
+    <string name="about_tips">使用须知</string>
+    <string name="about_me">部分功能必须开启辅助功能后才能正常使用。该APP适配的微信版本为：6.3.32，其他版本或者部分手机可能不能正常使用!
+    \n 部分功能依赖于Xposed框架注入微信，手机需要root，并安装完整的xposed框架，需要在xposed installer中，启用本应用对应的模块，重启生效</string>
+
+
+    <string name="function_open">Xposed功能开启</string>
+
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--base-->
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#f05050</color>
+    <color name="red2">#fa3f7e</color>
+    <color name="grey">#CCC</color>
+    <color name="blue">#0096FF</color>
+    <color name="yellow">#FFF7D23E</color>
+    <color name="green">#FF34A350</color>
+    <color name="lightGrey">#D7D7D7</color>
+    <color name="colorGrey">#2B2D2F</color>
+    <color name="colorWrapBg">#3c3c3c</color>
+
+    <!-- common color -->
+    <color name="contentColor">#3c3c3c</color>
+    <color name="common_bg">#F5F5F5</color>
+    <color name="common_back_bg">#2d2d2d</color>
+    <color name="common_highlight_icon_text">#0096FF</color>
+    <color name="common_title">#505055</color>
+    <color name="common_text_color">#B4B4B4</color>
+    <color name="common_grey">#B4B4B4</color>
+    <color name="common_blue">#0096FF</color>
+    <color name="common_green">#01C863</color>
+    <color name="common_divide_line">#F5F5F5</color>
+    <color name="common_divide_line_menu">#5A5A5A</color>
+</resources>

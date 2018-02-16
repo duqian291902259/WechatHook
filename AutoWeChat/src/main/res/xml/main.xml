@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory
+        android:key="@string/key_xposed_function"
+        android:title="@string/action_auto_function">
+
+        <site.duqian.autowechat.android.view.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_robot_repley"
+            android:summary="@string/action_robot_reply_description"
+            android:title="@string/action_robot_reply"/>
+
+        <site.duqian.autowechat.android.view.RangeSeekBarPreference
+            end="max_value"
+            start="min_value"
+            android:defaultValue="true"
+            android:dependency="@string/key_robot_repley"
+            android:title="@string/action_message_deley"/>
+
+
+        <site.duqian.autowechat.android.view.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_wechat_message"
+            android:summary="@string/action_listener_description"
+            android:title="@string/action_listener_title"/>
+
+        <site.duqian.autowechat.android.view.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_lucky_money"
+            android:summary="@string/action_lucky_money_description"
+            android:title="@string/action_lucky_money"/>
+
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="@string/key_accessibility_function"
+        android:title="@string/as_open">
+        <site.duqian.autowechat.android.view.CustomSwitchPreference
+            android:defaultValue="true"
+            android:icon="@mipmap/settings_ic_wechat"
+            android:key="@string/key_wechat_enable"
+            android:summary="@string/as_open_accessibility"
+            android:title="@string/title_wechat"/>
+
+        <site.duqian.autowechat.android.view.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_accessibility_reply"
+            android:summary="@string/action_accessibility_reply_description"
+            android:title="@string/action_accessibility_reply"/>
+
+        <EditTextPreference
+            android:dependency="@string/key_robot_repley"
+            android:hint="@string/action_filter_hit"
+            android:key="filter_keywords"
+            android:summary="@string/action_filter_description"
+            android:title="@string/action_filter_msg"/>
+
+        <Preference
+            android:key="@string/key_open_wechat"
+            android:title="@string/action_open_wechat"/>
+
+        <Preference
+            android:key="@string/key_enter_pyq"
+            android:title="@string/action_enter_pyq"/>
+
+        <Preference
+            android:key="@string/key_send_pyq"
+            android:title="@string/action_send_pyq"/>
+
+        <!--<Preference
+            android:key="@string/key_no_reply"
+            android:title="@string/action_filter_msg"
+            android:summary="@string/action_filter_description"/>-->
+        <Preference
+            android:key="@string/key_send_message"
+            android:title="@string/action_send_msg"/>
+        <Preference
+            android:key="@string/key_auto_reply"
+            android:summary="@string/action_reply_tips"
+            android:title="@string/action_reply_msg"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

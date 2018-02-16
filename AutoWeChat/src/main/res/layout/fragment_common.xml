@@ -1,0 +1,27 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:padding="@dimen/size40"
+             tools:context="site.duqian.autowechat.android.fragment.CommonFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size20"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/font_18"
+            android:lineSpacingExtra="@dimen/size15"
+            android:text="@string/about_me"
+            />
+
+    </LinearLayout>
+
+
+</FrameLayout>
