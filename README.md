@@ -3,6 +3,8 @@ Enjoy hooking wechat,by Xposed,Root,Accessibility,and so on...
 
 开发微信辅助工具，类似聊天机器人，自动抢红包，自动发朋友圈这样的功能。Xposed可以开发很多有趣的应用，但必须花足够时间研究所要hook的App源码，反编译后的都是高度混淆的代码，看起来太痛苦了，希望从我的项目里面，你能获取灵感。
 
+demo用的是老版本的微信，很多方法并没有hook，需要根据需要去深入！！
+
 ![auto-wechat-dusan.png](http://upload-images.jianshu.io/upload_images/2001922-59bb02f4ed2cfe65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
