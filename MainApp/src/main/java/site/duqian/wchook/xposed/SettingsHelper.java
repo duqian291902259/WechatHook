@@ -32,7 +32,7 @@ public class SettingsHelper {
     }
 
     public SettingsHelper() {
-        mXPreferences = new XSharedPreferences("site.duqian.wchook","config");
+        mXPreferences = new XSharedPreferences("site.duqian.wchook", "config");
         mXPreferences.makeWorldReadable();
         reload();
     }
@@ -75,10 +75,18 @@ public class SettingsHelper {
         Editor editor = null;
         if (mPreferences != null) {
             editor = mPreferences.edit();
-        } /*else if (mXPreferences != null) {
-            editor = mXPreferences.edit();
-        }*/
+        }
+        if (editor != null) {
+            editor.putString(key, value);
+            editor.apply();
+        }
+    }
 
+    public void setXString(String key, String value) {
+        Editor editor = null;
+        if (mXPreferences != null) {
+            editor = mXPreferences.edit();
+        }
         if (editor != null) {
             editor.putString(key, value);
             editor.apply();
@@ -89,10 +97,18 @@ public class SettingsHelper {
         Editor editor = null;
         if (mPreferences != null) {
             editor = mPreferences.edit();
-        } /*else if (mXPreferences != null) {
-            editor = mXPreferences.edit();
-        }*/
+        }
+        if (editor != null) {
+            editor.putBoolean(key, value);
+            editor.apply();
+        }
+    }
 
+    public void setXBoolean(String key, boolean value) {
+        Editor editor = null;
+        if (mXPreferences != null) {
+            editor = mXPreferences.edit();
+        }
         if (editor != null) {
             editor.putBoolean(key, value);
             editor.apply();
@@ -103,10 +119,18 @@ public class SettingsHelper {
         Editor editor = null;
         if (mPreferences != null) {
             editor = mPreferences.edit();
-        }/* else if (mXPreferences != null) {
-            editor = mXPreferences.edit();
-        }*/
+        }
+        if (editor != null) {
+            editor.putInt(key, value);
+            editor.apply();
+        }
+    }
 
+    public void setXInt(String key, int value) {
+        Editor editor = null;
+        if (mXPreferences != null) {
+            editor = mXPreferences.edit();
+        }
         if (editor != null) {
             editor.putInt(key, value);
             editor.apply();
