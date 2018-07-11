@@ -95,7 +95,8 @@ public class LuckyMoneyHook extends BaseHook {
 
 
         findAndHookMethod(RECEIVE_LUCKY_MONEY_REQUEST, classLoader, "a", int.class, String.class, JSONObject.class, new XC_MethodHook() {
-                    protected void beforeHookedMethod(MethodHookParam param) throws JSONException {
+            @Override
+            protected void beforeHookedMethod(MethodHookParam param) throws JSONException {
                         if (!shouldPick) {
                             return;
                         }

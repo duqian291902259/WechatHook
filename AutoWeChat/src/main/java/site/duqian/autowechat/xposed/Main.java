@@ -2,13 +2,6 @@ package site.duqian.autowechat.xposed;
 
 import android.content.Context;
 
-import site.duqian.autowechat.utils.LogUtils;
-import site.duqian.autowechat.xposed.hook.ActivityHook;
-import site.duqian.autowechat.xposed.hook.HookUtils;
-import site.duqian.autowechat.xposed.hook.LuckyMoneyHook;
-import site.duqian.autowechat.xposed.hook.MessageHook;
-import site.duqian.autowechat.xposed.utils.XposedUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +9,12 @@ import de.robv.android.xposed.IXposedHookInitPackageResources;
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.callbacks.XC_InitPackageResources;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
+import site.duqian.autowechat.utils.LogUtils;
+import site.duqian.autowechat.xposed.hook.ActivityHook;
+import site.duqian.autowechat.xposed.hook.HookUtils;
+import site.duqian.autowechat.xposed.hook.LuckyMoneyHook;
+import site.duqian.autowechat.xposed.hook.MessageHook;
+import site.duqian.autowechat.xposed.utils.XposedUtil;
 
 import static site.duqian.autowechat.xposed.hook.HookUtils.initWechatVersion;
 
@@ -36,7 +35,7 @@ public class Main implements IXposedHookLoadPackage,IXposedHookInitPackageResour
         if (!HookUtils.HOOK_PACKAGE_NAME.equals(lpparam.packageName)){
             return;
         }
-        //LogUtils.debug(TAG,"handleLoadPackage "+lpparam.packageName);
+        LogUtils.debug(TAG,"handleLoadPackage "+lpparam.packageName);
         ClassLoader classLoader = lpparam.classLoader;
         if (mContext==null) {
             mContext = HookUtils.getInstance().getContext();
@@ -60,7 +59,11 @@ public class Main implements IXposedHookLoadPackage,IXposedHookInitPackageResour
             LogUtils.debug(TAG,"MessageHook error "+e);
         }
 
-        new LuckyMoneyHook(classLoader, mContext).hookLuckyMoney();
+        try {
+            new LuckyMoneyHook(classLoader, mContext).hookLuckyMoney();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
        /* try {
             DatabaseHook.hookDatabase(classLoader, mContext);

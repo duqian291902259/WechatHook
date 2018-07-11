@@ -34,7 +34,7 @@
             android:value="true"/>
         <meta-data
             android:name="xposeddescription"
-            android:value="OAIR微信自动化助手"/>
+            android:value="微信自动化助手"/>
         <meta-data
             android:name="xposedminversion"
             android:value="54"/>
