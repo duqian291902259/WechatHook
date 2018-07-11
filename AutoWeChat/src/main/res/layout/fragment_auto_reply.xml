@@ -1,0 +1,84 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/common_bg"
+    android:padding="@dimen/size20">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size10"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/config_title_tips"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/font_18"
+            android:layout_marginBottom="@dimen/size20"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size30"
+            android:text="@string/config_keyword_tips"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/size10"
+            android:textColor="@color/common_text_color"/>
+
+        <EditText
+            android:id="@+id/et_keyword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/size40"
+            android:text="@string/config_keyword_hint"
+            android:textColor="@color/common_title"
+            android:textSize="@dimen/font_16"
+            android:paddingLeft="@dimen/size10"
+            android:background="@drawable/shape_white_corners_bg"
+            android:imeOptions="actionNext"
+            />
+<!-- android:hint="@string/config_keyword_hint"-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size30"
+            android:text="@string/config_reply_content_tips"
+            android:textColor="@color/common_text_color"
+            android:layout_marginTop="@dimen/size10"
+            android:gravity="center_vertical"/>
+
+        <EditText
+            android:id="@+id/et_reply_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/size40"
+            android:textColor="@color/common_title"
+            android:textSize="@dimen/font_16"
+            android:text="@string/config_reply_hint"
+            android:paddingLeft="@dimen/size10"
+            android:background="@drawable/shape_white_corners_bg"
+            android:imeOptions="actionDone"/>
+        <!---->
+        <Button
+            android:id="@+id/btn_save_config"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size40"
+            android:layout_marginTop="@dimen/size10"
+            android:text="@string/config_save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_18"
+            android:background="@drawable/shape_blue_corners_bg"
+            />
+
+        <TextView
+            android:id="@+id/tv_notify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/red"
+            android:layout_margin="@dimen/size20"
+            android:textSize="@dimen/font_16"
+            android:gravity="center"/>
+    </LinearLayout>
+</FrameLayout>
