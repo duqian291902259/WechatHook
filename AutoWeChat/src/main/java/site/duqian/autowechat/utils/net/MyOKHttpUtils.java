@@ -1,7 +1,5 @@
 package site.duqian.autowechat.utils.net;
 
-import site.duqian.autowechat.utils.UIUtils;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +10,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import site.duqian.autowechat.utils.UIUtils;
 
 /**
  * MyOkHttpUtils
@@ -20,6 +19,7 @@ import okhttp3.Response;
 public class MyOKHttpUtils {
     private static OkHttpClient okHttpClient ;
     private static MyOKHttpUtils myOkHttpUtils;
+
     public static MyOKHttpUtils getInstance() {
         if (myOkHttpUtils == null) {
             synchronized (MyOKHttpUtils.class) {

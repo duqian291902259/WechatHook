@@ -34,11 +34,12 @@ public class CommonHook {
     private static volatile CommonHook commonHook;
 
     private Handler handler;
-    public static String wechatVersionName="";
+    public static String wechatVersionName = "";
 
-    public CommonHook(){
+    public CommonHook() {
         getHandler();
     }
+
     public static CommonHook getInstance() {
         if (commonHook == null) {
             synchronized (CommonHook.class) {
@@ -50,19 +51,19 @@ public class CommonHook {
         return commonHook;
     }
 
-    public void showToast(Context context,String content){
+    public void showToast(Context context, String content) {
         getHandler();
         handler.post(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(context,content,Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, content, Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void getHandler() {
-        if (handler==null){
-            handler=new Handler(Looper.getMainLooper());
+        if (handler == null) {
+            handler = new Handler(Looper.getMainLooper());
         }
     }
 
@@ -70,18 +71,18 @@ public class CommonHook {
         final Class<?> aClass = findClass("android.app.ActivityThread", null);
         Object[] object = new Object[0];
         final Object currentActivityThread = callStaticMethod(aClass, "currentActivityThread", object);
-        return  (Context) callMethod(currentActivityThread, "getSystemContext", object);
+        return (Context) callMethod(currentActivityThread, "getSystemContext", object);
     }
 
 
     public static void initWechatVersion(Context context) {
-        if (context==null)return;
+        if (context == null) return;
         try {
             PackageInfo pInfo = context.getPackageManager().getPackageInfo(VersionParam.PACKAGE_NAME, 0);
             if (pInfo != null) {
                 wechatVersionName = pInfo.versionName;
                 VersionParam.init(wechatVersionName);
-                LogUtils.debug(TAG,"wechatVersionName="+ wechatVersionName);
+                LogUtils.debug(TAG, "wechatVersionName=" + wechatVersionName);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -98,7 +99,6 @@ public class CommonHook {
     private static XC_MethodHook textMethodHook = new XC_MethodHook() {
         @Override
         protected void beforeHookedMethod(MethodHookParam methodHookParam) throws Throwable {
-
             try {
                 Object object = methodHookParam.args[0];
                 if (object == null) return;
@@ -106,8 +106,9 @@ public class CommonHook {
                 if (!object.getClass().getSimpleName().contains("SpannableString")) {
                     abc = (String) object;
                     if (!TextUtils.isEmpty(abc)) {
-                        abc = ReplaceText(new String[]{"通讯录","Contacts","游戏", "扫一扫"},
-                                new String[]{"杜小菜","杜小菜","被Androider 杜小菜Hook了", "duqian2010@gmail.com"}, 4, abc);
+                        final String[] oldStrs = {"通讯录", "Contacts", "游戏", "扫一扫"};
+                        final String[] newStrs = {"杜小菜", "杜小菜", "被Androider 杜小菜Hook了", "duqian2010@gmail.com"};
+                        abc = ReplaceText(oldStrs, newStrs, abc);
                         methodHookParam.args[0] = abc;
                     }
                 }
@@ -118,10 +119,11 @@ public class CommonHook {
     };
 
 
-    private static String ReplaceText(String[] oristr, String[] newstr, int num, String abc) {
-        for (int i = 0; i < num; i++) {
-            if (!oristr[i].equals(""))
-                abc = abc.replaceAll(oristr[i], newstr[i]);
+    private static String ReplaceText(String[] oldStrs, String[] newStrs, String abc) {
+        if (oldStrs == null || newStrs == null || oldStrs.length != newStrs.length) return null;
+        for (int i = 0; i < oldStrs.length; i++) {
+            if (!oldStrs[i].equals(""))
+                abc = abc.replaceAll(oldStrs[i], newStrs[i]);
         }
         return abc;
     }

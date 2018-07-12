@@ -5,13 +5,6 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.easy.wtool.sdk.WToolSDK;
-import site.duqian.autowechat.model.Constant;
-import site.duqian.autowechat.utils.JsonUtil;
-import site.duqian.autowechat.utils.LogUtils;
-import site.duqian.autowechat.utils.SPUtils;
-import site.duqian.autowechat.utils.SystemUtil;
-import site.duqian.autowechat.utils.net.MyOKHttpUtils;
-import site.duqian.autowechat.wechat.WechatHookUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,6 +15,14 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import site.duqian.autowechat.model.Constant;
+import site.duqian.autowechat.utils.JsonUtil;
+import site.duqian.autowechat.utils.LogUtils;
+import site.duqian.autowechat.utils.SPUtils;
+import site.duqian.autowechat.utils.SystemUtil;
+import site.duqian.autowechat.utils.net.MyOKHttpUtils;
+import site.duqian.autowechat.wechat.WechatHookUtil;
 
 /**
  * 图灵机器人

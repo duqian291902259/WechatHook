@@ -11,11 +11,8 @@ import site.duqian.autowechat.model.Constant;
  * @author duqian
  */
 public class SPUtils {
-
     private static SharedPreferences sp;
-    //private static String SP_NAME = "config";
     private static String SP_NAME = Constant.PREFERENCE_NAME;
-    //private static int MODE = Context.MODE_PRIVATE;
     private static int MODE = Context.MODE_WORLD_READABLE;
 
     public static void putBoolean(Context context, String key, Boolean value) {
