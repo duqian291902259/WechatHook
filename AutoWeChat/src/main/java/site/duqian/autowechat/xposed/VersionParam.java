@@ -22,6 +22,8 @@ public class VersionParam {
     public static String getNetworkByModelMethod = "vw";
     public static String getMessageClass = PACKAGE_NAME+".e.b.by";
     public static boolean hasTimingIdentifier = false;
+    public static final String LUCKY_MONEY_RECEIVE_UI_CLASS_NAME = VersionParam.PACKAGE_NAME + ".plugin.luckymoney.ui.LuckyMoneyReceiveUI";
+    public static final String RECEIVE_LUCKY_MONEY_REQUEST = VersionParam.PACKAGE_NAME + ".plugin.luckymoney.c.ae";
 
     //conversation
     public static String conversationClass = PACKAGE_NAME+".e.b.ag";

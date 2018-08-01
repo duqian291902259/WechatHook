@@ -32,10 +32,6 @@ public class LuckyMoneyHook extends BaseHook {
 
     private static final String TAG = LuckyMoneyHook.class.getSimpleName();
     private Context mContext;
-
-    private static final String LUCKY_MONEY_RECEIVE_UI_CLASS_NAME = VersionParam.PACKAGE_NAME + ".plugin.luckymoney.ui.LuckyMoneyReceiveUI";
-    private static final String RECEIVE_LUCKY_MONEY_REQUEST = VersionParam.PACKAGE_NAME + ".plugin.luckymoney.c.ae";
-
     private static Object requestCaller;
     private static int msgType;
     private static int channelId;
@@ -79,7 +75,7 @@ public class LuckyMoneyHook extends BaseHook {
                     if (hasTimingIdentifier) {
                         LogUtils.debug(TAG,"hasTimingIdentifier:" + hasTimingIdentifier);
                         shouldPick = true;
-                        callMethod(requestCaller, "a", newInstance(findClass(RECEIVE_LUCKY_MONEY_REQUEST, classLoader), channelId, sendId, nativeUrlString, 0, "v1.0"), 0);
+                        callMethod(requestCaller, "a", newInstance(findClass(VersionParam.RECEIVE_LUCKY_MONEY_REQUEST, classLoader), channelId, sendId, nativeUrlString, 0, "v1.0"), 0);
                         return;
                     }
                     Object luckyMoneyRequest = newInstance(findClass("com.tencent.mm.plugin.luckymoney.c.ab", classLoader),
@@ -94,7 +90,7 @@ public class LuckyMoneyHook extends BaseHook {
         });
 
 
-        findAndHookMethod(RECEIVE_LUCKY_MONEY_REQUEST, classLoader, "a", int.class, String.class, JSONObject.class, new XC_MethodHook() {
+        findAndHookMethod(VersionParam.RECEIVE_LUCKY_MONEY_REQUEST, classLoader, "a", int.class, String.class, JSONObject.class, new XC_MethodHook() {
             @Override
             protected void beforeHookedMethod(MethodHookParam param) throws JSONException {
                         if (!shouldPick) {
@@ -115,7 +111,7 @@ public class LuckyMoneyHook extends BaseHook {
                 }
         );
 
-        findAndHookMethod(LUCKY_MONEY_RECEIVE_UI_CLASS_NAME, classLoader, VersionParam.receiveUIFunctionName, int.class, int.class, String.class, VersionParam.receiveUIParamName, new XC_MethodHook() {
+        findAndHookMethod(VersionParam.LUCKY_MONEY_RECEIVE_UI_CLASS_NAME, classLoader, VersionParam.receiveUIFunctionName, int.class, int.class, String.class, VersionParam.receiveUIParamName, new XC_MethodHook() {
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                 if (XSharedPrefUtil.quickOpen()) {

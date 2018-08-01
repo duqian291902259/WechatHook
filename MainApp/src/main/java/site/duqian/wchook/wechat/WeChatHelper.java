@@ -40,17 +40,17 @@ public class WeChatHelper {
         factory.setNamespaceAware(true);
         XmlPullParser pz = factory.newPullParser();
         pz.setInput(new StringReader(xl));
-        int v = pz.getEventType();
+        int eventType = pz.getEventType();
         String result = "";
-        while (v != XmlPullParser.END_DOCUMENT) {
-            if (v == XmlPullParser.START_TAG) {
+        while (eventType != XmlPullParser.END_DOCUMENT) {
+            if (eventType == XmlPullParser.START_TAG) {
                 if (pz.getName().equals(node)) {
                     pz.nextToken();
                     result = pz.getText();
                     break;
                 }
             }
-            v = pz.next();
+            eventType = pz.next();
         }
         return result;
     }
