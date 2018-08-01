@@ -38,7 +38,7 @@ public class SettingsHelper {
     }
 
     public SettingsHelper(Context context) {
-        this.mPreferences = context.getSharedPreferences(Constant.PREFERENCE_NAME, Context.MODE_WORLD_READABLE);//1
+        this.mPreferences = context.getSharedPreferences(Constant.PREFERENCE_NAME, Context.MODE_PRIVATE);//1
     }
 
     public String getString(String key, String defaultValue) {
