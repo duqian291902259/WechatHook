@@ -20,7 +20,6 @@ public class MyApplication extends Application {
         mContext = getApplicationContext();
         //设置未捕获异常的处理器
         Thread.currentThread().setUncaughtExceptionHandler(new MyExceptionHandler());
-        //LeakCanary.install(this);//leaks
     }
 
     private class MyExceptionHandler implements Thread.UncaughtExceptionHandler {

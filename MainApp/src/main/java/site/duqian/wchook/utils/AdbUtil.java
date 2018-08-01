@@ -15,9 +15,6 @@ public class AdbUtil {
 
     private static final String TAG = AdbUtil.class.getSimpleName();
     private static Process process;
-    //input keyevent "KEYCODE_BACK" //4
-    //input swipe 100 100 100 100 1000 //在 100 100 位置长按 1000毫秒
-
     //向下滚动的高度height
     public static  int scrollDown(int right,int bottom,int height) {
         height = Math.abs(bottom-height);//通知栏距离

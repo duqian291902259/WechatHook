@@ -14,42 +14,42 @@ public class ToastUtil {
     private static Handler handler;
     private static boolean isLong = false;
 
-    public static void toastLong(final Context context, final String... args){
+    public static void toastLong(final Context context, final String... args) {
         isLong = true;
-        toast(context,args);
+        toast(context, args);
     }
 
-    public static void toastShort(final Context context, final String... args){
+    public static void toastShort(final Context context, final String... args) {
         isLong = false;
-        toast(context,args);
+        toast(context, args);
     }
 
-    public static void toast(final Context context, final String... args){
-        //if (handler==null) {
+    public static void toast(final Context context, final String... args) {
+        if (handler == null) {
             handler = new Handler(Looper.getMainLooper());
-        //}
+        }
         handler.post(new Runnable() {
             @Override
             public void run() {
-                makeText(context,args);
+                makeText(context, args);
             }
         });
     }
 
-    private static void makeText(Context context, String... args){
+    private static void makeText(Context context, String... args) {
         StringBuilder sb = new StringBuilder();
         String temp = "";
-        for (Object obj : args){
-            if(obj!=null){
+        for (Object obj : args) {
+            if (obj != null) {
                 temp = obj.toString();
-            }else{
+            } else {
                 temp = " *null* ";
             }
-            sb.append(temp);
+            sb.append(temp).append(" ");
         }
         if (isLong) {
             Toast.makeText(context, sb.toString(), Toast.LENGTH_LONG).show();
-        }else {
+        } else {
             Toast.makeText(context, sb.toString(), Toast.LENGTH_SHORT).show();
         }
     }

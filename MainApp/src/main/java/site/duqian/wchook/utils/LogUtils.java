@@ -8,9 +8,7 @@ import android.util.Log;
  */
 public class LogUtils {
 
-
 	private static boolean debug = true;//debug测试时为,true,发布后改为：false;
-
 
 	public static final int LEVEL_NONE = 0;
 	public static final int LEVEL_VERBOSE = 1;
