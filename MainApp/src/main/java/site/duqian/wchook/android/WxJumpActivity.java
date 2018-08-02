@@ -9,12 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import site.duqian.wchook.R;
-import site.duqian.wchook.base.BaseActivity;
-import site.duqian.wchook.utils.CommandResult;
-import site.duqian.wchook.utils.ShellUtils;
-import site.duqian.wchook.utils.ThreadManager;
-import site.duqian.wchook.utils.ToastUtil;
 import com.yhao.floatwindow.FloatWindow;
 import com.yhao.floatwindow.MoveType;
 import com.yhao.floatwindow.Screen;
@@ -23,6 +17,12 @@ import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import site.duqian.wchook.R;
+import site.duqian.wchook.base.BaseActivity;
+import site.duqian.wchook.utils.CommandResult;
+import site.duqian.wchook.utils.ShellUtils;
+import site.duqian.wchook.utils.ThreadManager;
+import site.duqian.wchook.utils.ToastUtil;
 
 public class WxJumpActivity extends BaseActivity {
 

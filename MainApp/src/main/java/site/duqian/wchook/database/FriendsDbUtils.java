@@ -5,12 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import site.duqian.wchook.database.FriendDbContract.FriendsEntry;
 import site.duqian.wchook.model.NearbyFriend;
 import site.duqian.wchook.utils.LogUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Dusan (duqian) on 2017/5/12 - 21:05.

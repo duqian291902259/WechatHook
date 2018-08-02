@@ -2,10 +2,9 @@ package site.duqian.wchook.xposed;
 
 import android.content.Context;
 
-import site.duqian.wchook.utils.LogUtils;
-
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
+import site.duqian.wchook.utils.LogUtils;
 
 /**
  * Created by Dusan (duqian) on 2017/5/6 - 16:29.

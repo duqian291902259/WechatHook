@@ -14,11 +14,11 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-import site.duqian.wchook.utils.LogUtils;
-
 import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.List;
+
+import site.duqian.wchook.utils.LogUtils;
 
 /**
  * Created by Dusan (duqian) on 2017/5/8 - 16:28.

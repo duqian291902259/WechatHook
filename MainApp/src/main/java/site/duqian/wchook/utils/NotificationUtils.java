@@ -7,10 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
+import java.util.Random;
 
 import site.duqian.wchook.R;
-
-import java.util.Random;
 
 
 /**

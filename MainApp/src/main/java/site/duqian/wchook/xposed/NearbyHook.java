@@ -4,22 +4,21 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 
-import site.duqian.wchook.base.BaseHook;
-import site.duqian.wchook.utils.LogUtils;
-
 import java.lang.reflect.Field;
 import java.util.LinkedList;
 import java.util.List;
 
 import de.robv.android.xposed.XC_MethodHook;
+import site.duqian.wchook.base.BaseHook;
+import site.duqian.wchook.utils.LogUtils;
 
-import static site.duqian.wchook.accessibility.NearbyAs.username;
 import static de.robv.android.xposed.XposedHelpers.callMethod;
 import static de.robv.android.xposed.XposedHelpers.callStaticMethod;
 import static de.robv.android.xposed.XposedHelpers.findAndHookConstructor;
 import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
 import static de.robv.android.xposed.XposedHelpers.findClass;
 import static de.robv.android.xposed.XposedHelpers.newInstance;
+import static site.duqian.wchook.accessibility.NearbyAs.username;
 
 /**
  * Description:附近的人hook

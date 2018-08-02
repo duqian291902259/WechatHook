@@ -4,9 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
-import site.duqian.wchook.model.Constant;
-
 import de.robv.android.xposed.XSharedPreferences;
+import site.duqian.wchook.model.Constant;
 
 /**
  * Created by Dusan (duqian) on 2017/5/6 - 16:10.

@@ -2,8 +2,6 @@ package site.duqian.wchook.common;
 
 import android.text.TextUtils;
 
-import site.duqian.wchook.utils.LogUtils;
-
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -12,6 +10,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import site.duqian.wchook.utils.LogUtils;
 
 
 /**

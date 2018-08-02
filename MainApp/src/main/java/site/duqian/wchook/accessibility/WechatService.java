@@ -10,6 +10,9 @@ import android.os.Parcelable;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import site.duqian.wchook.database.FriendsDbUtils;
 import site.duqian.wchook.model.Constant;
 import site.duqian.wchook.model.NearbyFriend;
@@ -19,9 +22,6 @@ import site.duqian.wchook.utils.ToastUtil;
 import site.duqian.wchook.utils.UIUtil;
 import site.duqian.wchook.wechat.WechatUI;
 import site.duqian.wchook.xposed.SettingsHelper;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static site.duqian.wchook.accessibility.NearbyAs.enterNearby;
 import static site.duqian.wchook.accessibility.NearbyAs.lastUsername;

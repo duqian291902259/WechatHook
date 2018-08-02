@@ -5,11 +5,10 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 
-import site.duqian.wchook.utils.LogUtils;
-
 import java.lang.reflect.Method;
 
 import de.robv.android.xposed.XC_MethodHook;
+import site.duqian.wchook.utils.LogUtils;
 
 import static site.duqian.wchook.xposed.CommonHook.hook_method;
 import static site.duqian.wchook.xposed.CommonHook.hook_methods;
