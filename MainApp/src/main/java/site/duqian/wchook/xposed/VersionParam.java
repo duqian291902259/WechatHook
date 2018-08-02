@@ -50,18 +50,19 @@ public class VersionParam {
                 NEARBY_PROTOCAL_POSITION = ".mm.plugin.nearby.a.d";
                 NEARBY_PROTOCAL_POSITION2 = ".mm.plugin.nearby.a.c";
                 break;
-            case "6.5.7":
+            case "6.6.7":
                 //message
-                conversationClass = PACKAGE_NAME+".e.b.ag";
-                con_GetCursorMethod = "b";
-                con_MessageClass1 = PACKAGE_NAME+".ab.a";
-                con_NetworkMethod = "a";//a
                 con_MessageClass = PACKAGE_NAME+".modelmulti.i";
                 activity_chatingui = PACKAGE_NAME+".ui.chatting.ChattingUI";
                 activity_chatingui_a = activity_chatingui+".a";
-                networkRequest = PACKAGE_NAME+".model.ak";
-                requestMethod = "vw";
+                conversationClass = PACKAGE_NAME+".e.b.ag";
+                con_GetCursorMethod = "b";
+                con_MessageClass1 = PACKAGE_NAME+".ab.a";
+
+                networkRequest = PACKAGE_NAME+".model.au";
+                requestMethod = "DF";
+                con_NetworkMethod = "a";
                 break;
-        }
+}
     }
 }
