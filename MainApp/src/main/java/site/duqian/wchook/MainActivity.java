@@ -326,7 +326,7 @@ public class MainActivity extends BaseActivity {
             return;
         }
         if (!TextUtils.isEmpty(wechatVersionName)) {
-            if (wechatVersionName.contains("6.3.32") || wechatVersionName.contains("6.5.7")) {
+            if (wechatVersionName.contains("6.3.32") || wechatVersionName.contains("6.6.7")) {
                 LogUtils.debug(TAG, "WechatHook与当前微信版本兼容");
             } else {
                 ToastUtil.toast(context, "WechatHook与当前微信版本部分功能不兼容");
