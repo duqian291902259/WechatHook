@@ -11,7 +11,7 @@ public class VersionParam {
     //conversation
     public static String conversationClass = PACKAGE_NAME+".e.b.ag";
     public static String con_GetCursorMethod = "b";
-    public static String con_NetworkMethod = "a";//a
+    public static String con_NetworkMethod = "a";
     public static String con_MessageClass = PACKAGE_NAME+".modelmulti.i";
     public static String networkRequest = PACKAGE_NAME+".model.ak";
     public static String requestMethod = "vw";
@@ -35,6 +35,7 @@ public class VersionParam {
                 con_MessageClass = PACKAGE_NAME+".modelmulti.i";
                 networkRequest = PACKAGE_NAME+".model.ak";
                 requestMethod = "vw";
+                con_NetworkMethod = "a";
 
                 SayHiModel= PACKAGE_NAME+".pluginsdk.model.m";
                 BaseRequestBean = PACKAGE_NAME+".v.k";

@@ -6,6 +6,9 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import de.robv.android.xposed.XC_MethodHook;
 import site.duqian.wchook.base.BaseHook;
 import site.duqian.wchook.common.ApiUtil;
@@ -33,7 +36,7 @@ public class HookMessage extends BaseHook {
     private static final String TAG = HookMessage.class.getSimpleName() + "-wc-dq";
     private static Handler handler;
     private static Object requestCaller;
-    //private static List<String> list_msg = new ArrayList<>();
+    private static List<String> list_msg = new ArrayList<>();
 
     private SettingsHelper mSettings;
 
@@ -61,14 +64,20 @@ public class HookMessage extends BaseHook {
         });
     }
 
+    /**
+     * 用的是群发api，所以发送不能太频繁,会被禁用，导致发送失败
+     *
+     * @param param
+     */
     private void hookNewMessage(XC_MethodHook.MethodHookParam param) {
         synchronized (HookMessage.class) {
             String field_content = (String) getObjectField(param.thisObject, "field_content");
             String field_username = (String) getObjectField(param.thisObject, "field_username");
             int field_unReadCount = (int) getObjectField(param.thisObject, "field_unReadCount");
             int field_isSend = (int) getObjectField(param.thisObject, "field_isSend");
-            LogUtils.debug(TAG, "hookMessage " + field_username + ",field_isSend=" + field_isSend + "content=" + field_content + ",field_unReadCount=" + field_unReadCount);
-            getMsgType(param);
+            int msgType = getMsgType(param);
+            LogUtils.debug(TAG, "received msg msgType=" + msgType + ",talker=" + field_username + ",field_isSend=" + field_isSend + "content=" + field_content + ",field_unReadCount=" + field_unReadCount);
+
             if (field_unReadCount == 0 || TextUtils.isEmpty(field_content)) {//msgType=1表示文本
                 return;
             }
@@ -84,22 +93,29 @@ public class HookMessage extends BaseHook {
                 return;
             }
 
-            getReply(field_username, field_content);
+            //getReply(field_username, field_content);
+            if (!list_msg.contains(field_content)) {
+                list_msg.add(field_content);
+                getReply(field_username, field_content);
+            }
+
+            if (list_msg.size() > 100) {
+                list_msg.clear();
+            }
         }
     }
 
-    private void getMsgType(XC_MethodHook.MethodHookParam param) {
+    private int getMsgType(XC_MethodHook.MethodHookParam param) {
         String field_msgType = (String) getObjectField(param.thisObject, "field_msgType");
         int msgType = -1;
         if (!TextUtils.isEmpty(field_msgType)) {
             try {
                 msgType = Integer.parseInt(field_msgType);
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        LogUtils.debug(TAG, "hookMessage msgType=" + msgType);
-
+        return msgType;
     }
 
     //子线程请求,获取机器人回复
@@ -135,19 +151,19 @@ public class HookMessage extends BaseHook {
         }
 
         Object masssendObj = newInstance(findClass("com.tencent.mm.plugin.masssend.a.a", classLoader));//
-        setObjectField(masssendObj, "laj", field_username);
-        setObjectField(masssendObj, "lak", 1);//发送给一个人，为0
+        setObjectField(masssendObj, "laj", field_username);//可以多人，分号分开，未测试str.split(";");
+        setObjectField(masssendObj, "lak", 1);//发送给一个人，为0?
         setObjectField(masssendObj, "filename", replyContent);
         setObjectField(masssendObj, "msgType", 1);
-        LogUtils.debug(TAG, "dq wechat masssendObj :" + masssendObj.toString());
+        LogUtils.debug(TAG, "dq masssendObj=" + masssendObj.toString());
 
-        Object messageRequestObj = newInstance(findClass("com.tencent.mm.plugin.masssend.a.f", classLoader), masssendObj, false);//
+        Object messageRequestObj = newInstance(findClass("com.tencent.mm.plugin.masssend.a.f", classLoader), masssendObj, true);
 
-        //Object messageRequestObj = newInstance(findClass(VersionParam.con_MessageClass, classLoader), field_username, replyContent, 1);//type
+        callMethod(requestCaller, VersionParam.con_NetworkMethod, messageRequestObj, 0);//delayTime
 
-        callMethod(requestCaller, VersionParam.con_NetworkMethod, messageRequestObj, delayTime);
-        //list_msg.add(replyContent);//缓存发送的内容
-        LogUtils.debug(TAG, "dq wechat SendMessage :" + requestCaller.toString() + "，messageRequestObj:" + messageRequestObj.toString());
+        //list_msg.add(replyContent);//缓存发送的内容,防止重复发送重复内容
+
+        LogUtils.debug(TAG, "dq requestCaller=" + requestCaller.toString() + "，messageRequestObj:" + messageRequestObj.toString());
     }
 
     //AI机器人回复

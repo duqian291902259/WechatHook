@@ -64,7 +64,7 @@ public class ApiUtil {
             String response = requester.post(turing_api, json.toString());
             JSONObject object = new JSONObject(response);
             result = object.getString("text");
-            LogUtils.debug(TAG, "askRobot result=" + result);
+            //LogUtils.debug(TAG, "askRobot result=" + result);
         } catch (Exception e) {
             e.printStackTrace();
             LogUtils.debug(TAG, "error " + e);
@@ -125,7 +125,7 @@ public class ApiUtil {
         try {
             String result = requester.get(url);
             JSONObject object = new JSONObject(result);
-            LogUtils.debug(TAG, "askRobot result=" + result);
+            //LogUtils.debug(TAG, "askRobot result=" + result);
             reply = object.getString("response");//reply = object.optString("response");
         } catch (Exception e) {
             e.printStackTrace();
