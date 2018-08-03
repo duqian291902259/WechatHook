@@ -16,7 +16,7 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 public class MainHook implements IXposedHookLoadPackage {
     private final String TAG = MainHook.class.getSimpleName();
     private static SettingsHelper mSettings = new SettingsHelper();
-    private static String wechat_package = "com.tencent.mm";
+    private static String WECHAT_PACKAGE = "com.tencent.mm";
     private Context mContext;
     private HookMessage hookMessage;
     private NearbyHook nearbyHook;
@@ -24,7 +24,7 @@ public class MainHook implements IXposedHookLoadPackage {
 
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
-        if (!wechat_package.equals(lpparam.packageName)) {
+        if (!WECHAT_PACKAGE.equals(lpparam.packageName)) {
             return;
         }
         LogUtils.debug("dq xposed wechat="+lpparam.packageName);
@@ -57,11 +57,7 @@ public class MainHook implements IXposedHookLoadPackage {
                 nearbyHook = new NearbyHook(classLoader, mContext);
             }
             nearbyHook.hookSayHiModel();
-            /*nearbyHook.hookNearbyNetCallBack();
-            nearbyHook.hookSendGreeting("v1_214c8c42adcd20e738d4dae2abaa9edd88d020a4cbb1cfb4c8a6cf62d67d6a9f56ac1cf4888d7bc86ea23cc8b08ad63c@stranger","hello ,greeting u",0);
-            if (VersionParam.NearbyFriendsUI.equals(currentActivityName)) {
-                nearbyHook.hookGetFriendsByPosition(114.248529, 22.233347);
-            }*/
+
         } catch (Exception e) {
             LogUtils.debug(TAG, "nearbyHook error " + e);
         }
