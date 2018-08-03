@@ -1,7 +1,11 @@
 # WechatHook-Dusan
 Enjoy hooking wechat by Xposed...Accessibility...and so on
 
-开发微信辅助工具，聊天机器人，自动抢红包，自动发朋友圈这样的功能。Xposed可以帮助我们开发很多有趣的插件，难点是要花足够时间研究所要hook的App源码，寻找hook点，看混淆的代码是在太痛苦了，希望该项目对大家有所帮助和启发。没有诸神那么牛逼的框架，都是一点点积累玩起来。。。
+开发微信辅助工具，聊天机器人，自动抢红包，自动发朋友圈这样的功能。Xposed可以帮助我们开发很多有趣的插件，难点是要花足够时间研究所要hook的App源码，寻找hook点，看混淆的代码是在太痛苦了，希望该项目对大家有所帮助和启发。
+
+-------- 2018update --------
+#### 消息Hook，适配微信6.6.7了，欢迎修bug！待完善ing
+-------- 2018update --------
 
 ![auto-wechat-dusan.png](http://upload-images.jianshu.io/upload_images/2001922-59bb02f4ed2cfe65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
