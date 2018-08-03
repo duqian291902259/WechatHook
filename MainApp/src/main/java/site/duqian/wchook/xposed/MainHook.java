@@ -27,14 +27,14 @@ public class MainHook implements IXposedHookLoadPackage {
         if (!wechat_package.equals(lpparam.packageName)) {
             return;
         }
-        LogUtils.debug("duqian xposed "+lpparam.packageName);
+        LogUtils.debug("dq xposed wechat="+lpparam.packageName);
         ClassLoader classLoader = lpparam.classLoader;
         commonHook = CommonHook.getInstance();
         if (mContext == null) {
             mContext = commonHook.getContext();
             //获取wechat版本
             CommonHook.initWechatVersion(mContext);
-            commonHook.showToast(mContext,"duqian wechat hooked "+CommonHook.wechatVersionName);
+            commonHook.showToast(mContext,"dq wechat hooked "+CommonHook.wechatVersionName);
         }
 
         CommonHook.hookTextView();
@@ -49,7 +49,7 @@ public class MainHook implements IXposedHookLoadPackage {
             }
             hookMessage.hookConversationItem();
         } catch (Exception e) {
-            LogUtils.debug(TAG, "hook error " + e);
+            LogUtils.debug(TAG, "dq hook error " + e);
         }
 
         try {
