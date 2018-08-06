@@ -142,7 +142,14 @@ public class HookMessage extends BaseHook {
         });
     }
 
-    //微信发消息
+    /**
+     * hook了微信群发消息的api，这个接口发送的前提是微信coreNetwork 初始化完成之后才可以
+     * 不太适合于自动回复，可以自己先微信打开群发助手发几条信息，确保网络基类初始化并连接了，调用改方法主动发送消息
+     * 图片消息类似，只是msgType和构造方法不一样
+     * @param field_username 接收者id
+     * @param replyContent 文本内容
+     * @param delayTime 延时暂时未使用
+     */
     private void wechatSendMessage(String field_username, String replyContent, int delayTime) {
         LogUtils.debug(TAG, "------wechatSendMessage start-------");
 
@@ -151,8 +158,8 @@ public class HookMessage extends BaseHook {
         }
 
         Object masssendObj = newInstance(findClass("com.tencent.mm.plugin.masssend.a.a", classLoader));//
-        setObjectField(masssendObj, "laj", field_username);//可以多人，分号分开，未测试str.split(";");
-        setObjectField(masssendObj, "lak", 1);//发送给一个人，为0?
+        setObjectField(masssendObj, "laj", field_username);//可以多人，分号分开";",如：xxx;BBB
+        setObjectField(masssendObj, "lak", 1);//发送x个人，两个人为2
         setObjectField(masssendObj, "filename", replyContent);
         setObjectField(masssendObj, "msgType", 1);
         LogUtils.debug(TAG, "dq masssendObj=" + masssendObj.toString());
