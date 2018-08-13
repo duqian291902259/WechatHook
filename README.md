@@ -79,7 +79,7 @@ Enjoy hooking wechat by Xposed...Accessibility...and so on
 
 12，订单管理
 
-and so on...基于新版wechat开发的以上functions，暂时未加入本项目。
+and so on...
 
 [website------>   http://www.duqian.site](http://www.duqian.site)
 
