@@ -143,7 +143,7 @@ public class CommonUtil {
         if(node_send != null) {
             AccessibilityHelper.performClick(node_send);
             CommonUtil.init().backPrePage(service);//后退
-            service.setDefalut();
+            service.setDefault();
         }else{
             //LogUtils.debug(TAG, "sendText node is null "+resId);
         }
